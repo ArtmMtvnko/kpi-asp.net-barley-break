@@ -1,0 +1,141 @@
+﻿@page "/barleybreak"
+@inject IJSRuntime JS
+@using BlazorApp1.Pages.src;
+
+<h3>BarleyBreak</h3>
+
+<div class="bb-container">
+	@*<div @onclick="AddOne">Counter: @counter</div>
+	<div @onclick="DoSomething">2</div>*@
+	<div @onclick="Move1">1</div>
+	<div @onclick="Move2">2</div>
+	<div @onclick="Move3">3</div>
+	<div @onclick="Move4">4</div>
+
+	<div @onclick="Move5">5</div>
+	<div @onclick="Move6">6</div>
+	<div @onclick="Move7">7</div>
+	<div @onclick="Move8">8</div>
+
+	<div @onclick="Move9">9</div>
+	<div @onclick="Move10">10</div>
+	<div @onclick="Move11">11</div>
+	<div @onclick="Move12">12</div>
+
+	<div @onclick="Move13">13</div>
+	<div @onclick="Move14">14</div>
+	<div @onclick="Move15">15</div>
+	<div @onclick="Move16">16</div>
+</div>
+
+<button @onclick="DoSomething">Render</button>
+
+@code {
+	//private int counter = 0;
+
+	//private void AddOne() => counter++;
+
+	DefaulBoardController controller = new DefaulBoardController(new BoardFactory().CreateBoard());
+
+
+	private async Task DoSomething()
+	{
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move1()
+	{
+		controller.Move(1, 1);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move2()
+	{
+		controller.Move(2, 1);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move3()
+	{
+		controller.Move(3, 1);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move4()
+	{
+		controller.Move(4, 1);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move5()
+	{
+		controller.Move(1, 2);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move6()
+	{
+		controller.Move(2, 2);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move7()
+	{
+		controller.Move(3, 2);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move8()
+	{
+		controller.Move(4, 2);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move9()
+	{
+		controller.Move(1, 3);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move10()
+	{
+		controller.Move(2, 3);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move11()
+	{
+		controller.Move(3, 3);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move12()
+	{
+		controller.Move(4, 3);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move13()
+	{
+		controller.Move(1, 4);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move14()
+	{
+		controller.Move(2, 4);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move15()
+	{
+		controller.Move(3, 4);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+
+	private async Task Move16()
+	{
+		controller.Move(4, 4);
+		await JS.InvokeVoidAsync("doSome", controller.Board);
+	}
+}

@@ -1,0 +1,26 @@
+﻿.bb-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    width: 500px;
+    height: 500px;
+    background-color: red;
+
+    user-select: none;
+}
+
+    .bb-container > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 48px;
+
+        border: 1px solid transparent;
+    }
+
+    .bb-container > *:hover {
+        border: 1px solid black;
+        cursor: pointer;
+    }
